@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    /* Elemen yang menunggu Alpine tidak berkedip saat halaman dimuat. */
+    [x-cloak] {
+        display: none !important;
+    }
+
+    body {
+        @apply text-slate-700;
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply text-slate-900;
+    }
+}
+
+@layer components {
+    /* ---------- Kartu ---------- */
+    .card {
+        @apply rounded-xl bg-white shadow-card ring-1 ring-slate-200;
+    }
+
+    .card-header {
+        @apply flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 px-5 py-4;
+    }
+
+    .card-title {
+        @apply text-sm font-semibold text-slate-900;
+    }
+
+    .card-subtitle {
+        @apply text-xs text-slate-500;
+    }
+
+    .card-body {
+        @apply px-5 py-4;
+    }
+
+    /* ---------- Kartu statistik ---------- */
+    .stat-value {
+        @apply text-2xl font-semibold tracking-tight text-slate-900;
+    }
+
+    .stat-label {
+        @apply text-xs font-medium uppercase tracking-wide text-slate-500;
+    }
+
+    .stat-icon {
+        @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-lg;
+    }
+
+    /* ---------- Badge & status ---------- */
+    .badge {
+        @apply inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset;
+    }
+
+    .badge-neutral {
+        @apply bg-slate-50 text-slate-600 ring-slate-200;
+    }
+
+    .badge-brand {
+        @apply bg-brand-50 text-brand-700 ring-brand-200;
+    }
+
+    .badge-success {
+        @apply bg-emerald-50 text-emerald-700 ring-emerald-200;
+    }
+
+    .badge-warning {
+        @apply bg-amber-50 text-amber-700 ring-amber-200;
+    }
+
+    .badge-danger {
+        @apply bg-rose-50 text-rose-700 ring-rose-200;
+    }
+
+    .badge-info {
+        @apply bg-sky-50 text-sky-700 ring-sky-200;
+    }
+
+    /* Chip penanda fitur yang belum tersedia pada tahap ini. */
+    .chip-soon {
+        @apply rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-500;
+    }
+
+    /* ---------- Tombol ---------- */
+    .btn {
+        @apply inline-flex select-none items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .btn-primary {
+        @apply bg-brand-600 text-white hover:bg-brand-700 focus-visible:ring-brand-500;
+    }
+
+    .btn-secondary {
+        @apply bg-slate-900 text-white hover:bg-slate-800 focus-visible:ring-slate-500;
+    }
+
+    .btn-outline {
+        @apply bg-white text-slate-700 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus-visible:ring-brand-500;
+    }
+
+    .btn-ghost {
+        @apply text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus-visible:ring-slate-400;
+    }
+
+    .btn-danger {
+        @apply bg-rose-600 text-white hover:bg-rose-700 focus-visible:ring-rose-500;
+    }
+
+    .btn-sm {
+        @apply px-2.5 py-1.5 text-xs;
+    }
+
+    /* ---------- Tabel ---------- */
+    .table-base {
+        @apply min-w-full divide-y divide-slate-200 text-sm;
+    }
+
+    .table-head {
+        @apply bg-slate-50/80 text-left text-xs font-semibold uppercase tracking-wide text-slate-500;
+    }
+
+    .table-head-cell {
+        @apply whitespace-nowrap px-4 py-3;
+    }
+
+    .table-cell {
+        @apply whitespace-nowrap px-4 py-3 text-slate-600;
+    }
+
+    .table-row {
+        @apply border-b border-slate-100 last:border-0 hover:bg-slate-50/70;
+    }
+
+    /* ---------- Form ---------- */
+    .label-base {
+        @apply block text-sm font-medium text-slate-700;
+    }
+
+    .input-base {
+        @apply block w-full rounded-lg border-slate-300 text-sm shadow-sm focus:border-brand-500 focus:ring-brand-500 disabled:bg-slate-50 disabled:text-slate-500;
+    }
+
+    .input-error {
+        @apply border-rose-300 focus:border-rose-500 focus:ring-rose-500;
+    }
+
+    .hint-base {
+        @apply text-xs text-slate-500;
+    }
+
+    /* ---------- Navigasi ---------- */
+    .sidebar-link {
+        @apply flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900;
+    }
+
+    .sidebar-link-active {
+        @apply bg-brand-50 text-brand-700 hover:bg-brand-50 hover:text-brand-700;
+    }
+
+    .sidebar-link-disabled {
+        @apply cursor-not-allowed text-slate-400 hover:bg-transparent hover:text-slate-400;
+    }
+
+    .bottom-nav-link {
+        @apply flex flex-1 flex-col items-center gap-1 px-1 py-2 text-[11px] font-medium text-slate-500;
+    }
+
+    .bottom-nav-link-active {
+        @apply text-brand-700;
+    }
+
+    /* ---------- Lain-lain ---------- */
+    .avatar {
+        @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-100 text-sm font-semibold text-brand-700;
+    }
+
+    .progress-track {
+        @apply h-1.5 w-full overflow-hidden rounded-full bg-slate-100;
+    }
+
+    .progress-bar {
+        @apply h-full rounded-full bg-brand-500;
+    }
+
+    .divider {
+        @apply border-t border-slate-100;
+    }
+}
